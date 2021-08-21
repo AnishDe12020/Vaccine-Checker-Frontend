@@ -1,10 +1,18 @@
 import Head from "next/head"
 import { Formik, Form, ErrorMessage } from "formik"
-import { Input, Button, Flex, Box, useToast } from "@chakra-ui/react"
+import {
+  Input,
+  Button,
+  Flex,
+  Box,
+  useToast,
+  useColorModeValue,
+} from "@chakra-ui/react"
 import { submitData } from "@/utils/db"
 
 export default function Home() {
   const toast = useToast()
+  const FormBg = useColorModeValue("gray.100", "gray.900")
   return (
     <div>
       <Head>
@@ -85,7 +93,7 @@ export default function Home() {
               <Flex
                 m={4}
                 p={4}
-                backgroundColor="gray.100"
+                backgroundColor={FormBg}
                 flexDirection="column"
                 borderRadius={8}
                 justifyContent="space-between"
