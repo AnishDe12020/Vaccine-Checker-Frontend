@@ -6,12 +6,15 @@ import {
   Flex,
   Box,
   useToast,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react"
+import { SunIcon, MoonIcon } from "@chakra-ui/icons"
 import { submitData } from "@/utils/db"
 
 export default function Home() {
   const toast = useToast()
+  const { colorMode, toggleColorMode } = useColorMode()
   const FormBg = useColorModeValue("gray.100", "gray.900")
   return (
     <div>
@@ -89,6 +92,9 @@ export default function Home() {
       >
         {({ values, handleChange, handleBlur, isSubmitting }) => (
           <Box m={8} p={4} borderRadius={8}>
+            <Button m={4} onClick={toggleColorMode}>
+              {colorMode === "light" ? <SunIcon /> : <MoonIcon />}
+            </Button>
             <Form>
               <Flex
                 m={4}
