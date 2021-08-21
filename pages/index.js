@@ -16,6 +16,30 @@ export default function Home() {
 
       <Formik
         initialValues={{ name: "", age: "", email: "", pinCode: "" }}
+        onValidate={(errors, values) => {
+          if (values.name === "") {
+            errors.name = "Please enter your name"
+          }
+          if (values.age === "") {
+            errors.age = "Please enter your age"
+          } else if (values.age < 18) {
+            errors.age =
+              "Only ones 18 or above are eligible for vaccination as of now."
+          }
+
+          if (values.email === "") {
+            errors.email = "Please enter your email"
+          } else if (
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+          ) {
+            errors.email = "Please enter a valid email"
+          }
+          if (values.pinCode === "") {
+            errors.pinCode = "Please enter your pin code"
+          } else if (values.pinCode.length !== 6) {
+            errors.pinCode = "Please enter a valid pin code"
+          }
+        }}
         onSubmit={(values, { setSubmitting }) => {
           console.log(values)
           setSubmitting(false)
