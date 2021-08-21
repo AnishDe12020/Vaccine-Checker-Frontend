@@ -1,6 +1,6 @@
 import Head from "next/head"
 import { Formik, Form, ErrorMessage } from "formik"
-import { Input, Button, useToast } from "@chakra-ui/react"
+import { Input, Button, Flex, Box, useToast } from "@chakra-ui/react"
 import { submitData } from "@/utils/db"
 
 export default function Home() {
@@ -80,44 +80,58 @@ export default function Home() {
         }}
       >
         {({ values, handleChange, handleBlur, isSubmitting }) => (
-          <Form>
-            <Input
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.name}
-              placeholder="Your name here"
-              name="name"
-            />
-            <ErrorMessage name="name" />
-            <Input
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.age}
-              placeholder="Your age here"
-              name="age"
-            />
-            <ErrorMessage name="age" />
-            <Input
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
-              placeholder="Your email id here"
-              name="email"
-            />
-            <ErrorMessage name="email" />
-            <Input
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.pinCode}
-              placeholder="Your pin code here"
-              name="pinCode"
-            />
-            <ErrorMessage name="pinCode" />
-
-            <Button type="submit" isLoading={isSubmitting}>
-              Submit
-            </Button>
-          </Form>
+          <Box m={8} p={4} borderRadius={8}>
+            <Form>
+              <Flex
+                m={4}
+                p={4}
+                backgroundColor="gray.100"
+                flexDirection="column"
+                borderRadius={8}
+                justifyContent="space-between"
+              >
+                <Input
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.name}
+                  placeholder="Your name here"
+                  name="name"
+                  m={2}
+                />
+                <ErrorMessage name="name" />
+                <Input
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.age}
+                  placeholder="Your age here"
+                  name="age"
+                  m={2}
+                />
+                <ErrorMessage name="age" />
+                <Input
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                  placeholder="Your email id here"
+                  name="email"
+                  m={2}
+                />
+                <ErrorMessage name="email" />
+                <Input
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.pinCode}
+                  placeholder="Your pin code here"
+                  name="pinCode"
+                  m={2}
+                />
+                <ErrorMessage name="pinCode" />
+              </Flex>
+              <Button m={4} p={4} type="submit" isLoading={isSubmitting}>
+                Submit
+              </Button>
+            </Form>
+          </Box>
         )}
       </Formik>
     </div>
