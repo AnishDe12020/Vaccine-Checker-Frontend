@@ -3,6 +3,8 @@ The backend code can be found in this [Github repository](https://github.com/Ani
 
 The webapp is currently hosted at [https://vaccine-checker-anishde12020.vercel.app/](https://vaccine-checker-anishde12020.vercel.app/)
 
+**Note: The backend part is not hosted anywhere as of now so it won't really alert you just yet**
+
 ## Getting Started
 
 First, run the development server:
