@@ -1,5 +1,5 @@
 This is a small project which notifies users whenever a new vaccination slot is available. It comprises of a frontenc written in javascript and a backend written in python.
-The backend code can be found in this [Github repository](https://github.com/AnishDe12020/Vacccine-Checker-Backend).
+The backend code can be found in this [Github repository](https://github.com/AnishDe12020/Vaccine-Checker-Backend).
 
 The webapp is currently hosted at [https://vaccine-checker-anishde12020.vercel.app/](https://vaccine-checker-anishde12020.vercel.app/)
 
